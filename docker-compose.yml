@@ -2,20 +2,46 @@ version: '3.8'
 
 services:
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
     container_name: academico-api
+    
     ports:
       - "8000:8000"
+    
     environment:
       - DATABASE_URL=sqlite:///./academic.db
+      - DEBUG=False
+    
     volumes:
       - .:/app
+      - ./academic.db:/app/academic.db
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Modo desenvolvimento com reload
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    
     networks:
       - academico-network
-
-  # Serviço auxiliar para banco de dados (SQLite está no volume local)
-  # Se mudar para PostgreSQL, descomente e configure aqui
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Limites de recursos (opcional)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1'
+    #       memory: 512M
 
 networks:
   academico-network:
@@ -24,3 +50,4 @@ networks:
 volumes:
   app-data:
     driver: local
+

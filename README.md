@@ -1,23 +1,28 @@
 # 🎓 API de Gerenciamento Acadêmico
 
-Uma API REST completa para gerenciar sistemas acadêmicos com cadastro de alunos, professores, disciplinas, turmas, matrículas e notas.
+Uma API REST robusta e bem documentada para gerenciar sistemas acadêmicos com suporte completo a alunos, professores, disciplinas, turmas, matrículas e notas.
 
-**Stack**: FastAPI + SQLite + Docker  
-**Arquitetura**: Camadas (Domain, Services, Router, Database)
+**Stack**: FastAPI + SQLite + Docker + Pytest  
+**Arquitetura**: Camadas (Domain, Services, Router, Database)  
+**Status**: ✅ Produção-Ready
 
 ---
 
-## 📋 Características
+## ✨ Características
 
 ✅ **CRUD Completo** para Alunos e Disciplinas  
-✅ **Gestão de Matrículas** - criar, cancelar, consultar  
+✅ **Gestão de Matrículas** - criar, cancelar, consultar com validação de vagas  
 ✅ **Gestão de Notas** - lançar, corrigir, consultar  
 ✅ **Relatórios** - boletim do aluno com médias por disciplina  
 ✅ **Health Check** - status da API e conexão com banco  
 ✅ **Swagger/OpenAPI** - documentação automática em `/docs`  
 ✅ **Seed de Dados** - 5 alunos, 3 professores, 4 disciplinas com notas  
-✅ **Docker** - Dockerfile e docker-compose inclusos  
+✅ **Docker** - Dockerfile com health checks e docker-compose  
 ✅ **Validação** - schemas Pydantic com validação automática  
+✅ **Logging** - logging estruturado em todos os endpoints  
+✅ **Testes** - testes unitários com pytest  
+✅ **Type Hints** - type annotations completas  
+✅ **Docstrings** - documentação em estilo Google  
 
 ---
 
@@ -25,7 +30,7 @@ Uma API REST completa para gerenciar sistemas acadêmicos com cadastro de alunos
 
 ### Pré-requisitos
 - Docker e Docker Compose instalados
-- Git (opcional, para clonar)
+- Git (opcional)
 
 ### Executar
 
@@ -274,7 +279,35 @@ academico-api/
 
 ---
 
-## 🛠️ Desenvolvimento Local (sem Docker)
+## 🧪 Testes
+
+### Rodar Testes
+
+```bash
+# Todos os testes
+pytest tests/ -v
+
+# Com coverage
+pytest tests/ --cov=app
+
+# Arquivo específico
+pytest tests/test_endpoints.py
+
+# Função específica
+pytest tests/test_endpoints.py::TestAlunos::test_criar_aluno -v
+```
+
+### Cobertura de Testes
+
+- ✅ Endpoints de Alunos
+- ✅ Endpoints de Professores
+- ✅ Health check
+- ✅ Validações Pydantic
+- ✅ Erros 404, 400
+
+---
+
+## 🛠️ Desenvolvimento Local
 
 ### Pré-requisitos
 - Python 3.11+
@@ -333,13 +366,52 @@ docker-compose up
 
 A API vem com um seed automático ao iniciar:
 
-**Alunos**: 5 alunos com matrículas
-**Professores**: 3 professores
-**Disciplinas**: 4 disciplinas
-**Matrículas**: 11 registros
-**Notas**: Múltiplas notas (N1, N2, N3) para cada matrícula
+| Recurso | Quantidade | Detalhes |
+|---------|-----------|----------|
+| Alunos | 5 | Com matrículas de 2024001-2024005 |
+| Professores | 3 | Com especialidades variadas |
+| Disciplinas | 4 | Engenharia, BD, Algoritmos, ES2 |
+| Matrículas | 11 | Alunos matriculados em várias disciplinas |
+| Notas | 20+ | N1, N2, N3 para cada matrícula |
 
 Acesse `/docs` para explorar via Swagger!
+
+---
+
+## 🏛️ Convençõesde Código
+
+### Type Hints
+
+```python
+from typing import List, Optional
+from sqlalchemy.orm import Session
+
+def obter_alunos(db: Session, skip: int = 0, limit: int = 100) -> List[Aluno]:
+    """Listar alunos com paginação."""
+    pass
+```
+
+### Docstrings
+
+```python
+def criar_aluno(db: Session, aluno: AlunoCreate) -> Aluno:
+    """
+    Criar novo aluno.
+    
+    Args:
+        db: Sessão do banco
+        aluno: Dados do aluno
+    
+    Returns:
+        Aluno criado com ID
+    
+    Raises:
+        HTTPException: Se email duplicado
+    """
+    pass
+```
+
+Consulte [DESENVOLVIMENTO.md](DESENVOLVIMENTO.md) para convenções completas.
 
 ---
 

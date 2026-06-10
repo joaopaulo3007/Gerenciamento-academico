@@ -6,3 +6,8 @@ pydantic==2.4.2
 pydantic-settings==2.0.3
 pydantic[email]
 alembic==1.12.1
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
