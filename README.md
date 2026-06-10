@@ -110,7 +110,7 @@ curl http://localhost:8000/v1/health
 
 ---
 
-## 📖 Endpoints Principais
+##  Endpoints Principais
 
 ### Alunos (`/v1/alunos`)
 - `POST /` - Criar aluno
