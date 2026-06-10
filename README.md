@@ -8,7 +8,7 @@ Uma API REST robusta e bem documentada para gerenciar sistemas acadêmicos com s
 
 ---
 
-## ✨ Características
+##  Características
 
 ✅ **CRUD Completo** para Alunos e Disciplinas  
 ✅ **Gestão de Matrículas** - criar, cancelar, consultar com validação de vagas  
@@ -26,7 +26,7 @@ Uma API REST robusta e bem documentada para gerenciar sistemas acadêmicos com s
 
 ---
 
-## 🚀 Quick Start com Docker
+##  Quick Start com Docker
 
 ### Pré-requisitos
 - Docker e Docker Compose instalados
@@ -183,7 +183,7 @@ curl http://localhost:8000/v1/health
 
 ---
 
-## 📊 Modelo de Dados
+##  Modelo de Dados
 
 ### Aluno
 - `id`: int (PK)
@@ -234,7 +234,7 @@ curl http://localhost:8000/v1/health
 
 ---
 
-## 🗂️ Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 academico-api/
@@ -340,7 +340,7 @@ http://localhost:8000/docs
 
 ---
 
-## 🐳 Docker
+##  Docker
 
 ### Build manual
 
@@ -362,7 +362,7 @@ docker-compose up
 
 ---
 
-## 📝 Dados de Teste
+##  Dados de Teste
 
 A API vem com um seed automático ao iniciar:
 
@@ -378,7 +378,7 @@ Acesse `/docs` para explorar via Swagger!
 
 ---
 
-## 🏛️ Convençõesde Código
+##  Convençõesde Código
 
 ### Type Hints
 
