@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: academico-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./academic.db
+    volumes:
+      - .:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - academico-network
+
+  # Serviço auxiliar para banco de dados (SQLite está no volume local)
+  # Se mudar para PostgreSQL, descomente e configure aqui
+
+networks:
+  academico-network:
+    driver: bridge
+
+volumes:
+  app-data:
+    driver: local
