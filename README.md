@@ -52,7 +52,7 @@ A primeira execução criará o banco de dados e populará com dados de exemplo.
 
 ---
 
-## 📚 Exemplos de Uso
+##  Exemplos de Uso
 
 ### 1. Criar um Aluno
 
@@ -156,7 +156,7 @@ curl http://localhost:8000/v1/health
 
 ---
 
-## 🏗️ Arquitetura em Camadas
+##  Arquitetura em Camadas
 
 ```
 ┌─────────────────────────────────────────┐
@@ -279,7 +279,7 @@ academico-api/
 
 ---
 
-## 🧪 Testes
+##  Testes
 
 ### Rodar Testes
 
