@@ -60,9 +60,9 @@ A primeira execução criará o banco de dados e populará com dados de exemplo.
 curl -X POST http://localhost:8000/v1/alunos \
   -H "Content-Type: application/json" \
   -d '{
-    "nome": "João Silva",
-    "email": "joao@example.com",
-    "matricula": "2024001",
+    "nome": "João Paulo Felisardo",
+    "email": "joaopaulodemoraesfelisardo@gmail.com",
+    "matricula": "2301045",
     "periodo": 1
   }'
 ```
@@ -368,7 +368,7 @@ A API vem com um seed automático ao iniciar:
 
 | Recurso | Quantidade | Detalhes |
 |---------|-----------|----------|
-| Alunos | 5 | Com matrículas de 2024001-2024005 |
+| Alunos | 5 | Inclui matrícula principal 2301045 |
 | Professores | 3 | Com especialidades variadas |
 | Disciplinas | 4 | Engenharia, BD, Algoritmos, ES2 |
 | Matrículas | 11 | Alunos matriculados em várias disciplinas |

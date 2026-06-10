@@ -63,16 +63,16 @@ class TestAlunos:
     def test_criar_aluno(self):
         """Testar criação de um novo aluno."""
         aluno_data = {
-            "nome": "João Silva",
-            "email": "joao@test.com",
-            "matricula": "2024001",
+            "nome": "João Paulo Felisardo",
+            "email": "joaopaulodemoraesfelisardo@gmail.com",
+            "matricula": "2301045",
             "periodo": 1
         }
         response = client.post("/v1/alunos", json=aluno_data)
         assert response.status_code == 201
         data = response.json()
-        assert data["nome"] == "João Silva"
-        assert data["email"] == "joao@test.com"
+        assert data["nome"] == "João Paulo Felisardo"
+        assert data["email"] == "joaopaulodemoraesfelisardo@gmail.com"
         assert data["id"] == 1
     
     def test_criar_aluno_email_duplicado(self):
@@ -171,15 +171,15 @@ class TestProfessores:
     def test_criar_professor(self):
         """Testar criação de professor."""
         professor_data = {
-            "nome": "Dra. Maria Santos",
-            "email": "maria@professor.com",
-            "especialidade": "Engenharia de Software"
+            "nome": "Roger",
+            "email": "roger@anchieta.com",
+            "especialidade": "Arquitetura de Software"
         }
         response = client.post("/v1/professores", json=professor_data)
         assert response.status_code == 201
         data = response.json()
-        assert data["nome"] == "Dra. Maria Santos"
-        assert data["email"] == "maria@professor.com"
+        assert data["nome"] == "Roger"
+        assert data["email"] == "roger@anchieta.com"
     
     def test_listar_professores(self):
         """Testar listagem de professores."""

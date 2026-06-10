@@ -193,16 +193,16 @@ pytest --cov=app tests/
 def test_criar_aluno():
     """Testar criação de aluno."""
     aluno_data = {
-        "nome": "João Silva",
-        "email": "joao@test.com",
-        "matricula": "2024001",
+        "nome": "João Paulo Felisardo",
+        "email": "joaopaulodemoraesfelisardo@gmail.com",
+        "matricula": "2301045",
         "periodo": 1
     }
     response = client.post("/v1/alunos", json=aluno_data)
     
     assert response.status_code == 201
     data = response.json()
-    assert data["nome"] == "João Silva"
+    assert data["nome"] == "João Paulo Felisardo"
 ```
 
 ---
@@ -222,7 +222,7 @@ logger.critical("🔴 Erro crítico")       # CRITICAL
 ### Padrão de Log
 
 ```
-2024-06-10 10:30:45,123 - app.services.aluno_service - INFO - ✓ Aluno criado: João Silva
+2024-06-10 10:30:45,123 - app.services.aluno_service - INFO - ✓ Aluno criado: João Paulo Felisardo
 ```
 
 ---

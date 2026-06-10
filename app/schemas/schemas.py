@@ -27,9 +27,9 @@ class AlunoCreate(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
-                "nome": "João Silva",
-                "email": "joao@example.com",
-                "matricula": "2024001",
+                "nome": "João Paulo Felisardo",
+                "email": "joaopaulodemoraesfelisardo@gmail.com",
+                "matricula": "2301045",
                 "periodo": 1,
             }
         }
@@ -58,9 +58,9 @@ class ProfessorCreate(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
-                "nome": "Dra. Maria Santos",
-                "email": "maria@example.com",
-                "especialidade": "Engenharia de Software",
+                "nome": "Roger",
+                "email": "roger@anchieta.com",
+                "especialidade": "Arquitetura de Software",
             }
         }
 
@@ -89,8 +89,8 @@ class DisciplinaCreate(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
-                "nome": "Programação em Python",
-                "codigo": "PROG001",
+                "nome": "Arquitetura de Software",
+                "codigo": "ASW001",
                 "carga_horaria": 60,
                 "professor_id": 1,
             }
@@ -211,9 +211,9 @@ class BoletimDisciplinaResponse(BaseModel):
     class Config:
         json_schema_extra = {
             "example": {
-                "disciplina_nome": "Programação em Python",
-                "disciplina_codigo": "PROG001",
-                "professor_nome": "Dra. Maria Santos",
+                "disciplina_nome": "Arquitetura de Software",
+                "disciplina_codigo": "ASW001",
+                "professor_nome": "Roger",
                 "notas": [
                     {"id": 1, "matricula_id": 1, "tipo": "N1", "valor": 8.5, "data_lancamento": "2024-06-10T10:30:00", "data_criacao": "2024-06-10T10:30:00"},
                 ],
@@ -233,8 +233,8 @@ class BoletimResponse(BaseModel):
         json_schema_extra = {
             "example": {
                 "aluno_id": 1,
-                "aluno_nome": "João Silva",
-                "aluno_matricula": "2024001",
+                "aluno_nome": "João Paulo Felisardo",
+                "aluno_matricula": "2301045",
                 "disciplinas": [],
                 "media_geral": 0.0,
             }

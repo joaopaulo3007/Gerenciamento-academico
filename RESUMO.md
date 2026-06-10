@@ -232,7 +232,7 @@ curl http://localhost:8000/v1/health
 # Criar aluno
 curl -X POST http://localhost:8000/v1/alunos \
   -H "Content-Type: application/json" \
-  -d '{"nome":"João","email":"joao@test.com","matricula":"2024001","periodo":1}'
+  -d '{"nome":"João Paulo Felisardo","email":"joaopaulodemoraesfelisardo@gmail.com","matricula":"2301045","periodo":1}'
 ```
 
 ### GitHub

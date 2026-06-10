@@ -51,9 +51,9 @@ class AlunoService:
         
         Example:
             >>> aluno_data = AlunoCreate(
-            ...     nome="João Silva",
-            ...     email="joao@example.com",
-            ...     matricula="2024001",
+            ...     nome="João Paulo Felisardo",
+            ...     email="joaopaulodemoraesfelisardo@gmail.com",
+            ...     matricula="2301045",
             ...     periodo=1
             ... )
             >>> aluno = AlunoService.criar_aluno(db, aluno_data)

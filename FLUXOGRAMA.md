@@ -46,7 +46,7 @@ sequenceDiagram
 ```mermaid
 graph LR
     subgraph "Aluno"
-        A1["Aluno 1<br/>João Silva"]
+        A1["Aluno 1<br/>João Paulo Felisardo"]
     end
     
     subgraph "Matrículas"

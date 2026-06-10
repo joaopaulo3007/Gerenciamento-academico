@@ -13,9 +13,9 @@ def seed_database(db: Session):
 
     # ===== CRIAR PROFESSORES =====
     professor1 = Professor(
-        nome="Dra. Maria Santos",
-        email="maria.santos@academico.com",
-        especialidade="Engenharia de Software"
+        nome="Roger",
+        email="roger@anchieta.com",
+        especialidade="Arquitetura de Software"
     )
     professor2 = Professor(
         nome="Prof. Carlos Oliveira",
@@ -33,7 +33,7 @@ def seed_database(db: Session):
 
     # ===== CRIAR ALUNOS =====
     alunos_data = [
-        {"nome": "João Silva", "email": "joao.silva@aluno.com", "matricula": "2024001", "periodo": 3},
+        {"nome": "João Paulo Felisardo", "email": "joaopaulodemoraesfelisardo@gmail.com", "matricula": "2301045", "periodo": 3},
         {"nome": "Maria Oliveira", "email": "maria.oliveira@aluno.com", "matricula": "2024002", "periodo": 2},
         {"nome": "Pedro Santos", "email": "pedro.santos@aluno.com", "matricula": "2024003", "periodo": 1},
         {"nome": "Lucas Ferreira", "email": "lucas.ferreira@aluno.com", "matricula": "2024004", "periodo": 4},
@@ -47,8 +47,8 @@ def seed_database(db: Session):
     # ===== CRIAR DISCIPLINAS =====
     disciplinas_data = [
         {
-            "nome": "Programação em Python",
-            "codigo": "PROG001",
+            "nome": "Arquitetura de Software",
+            "codigo": "ASW001",
             "carga_horaria": 60,
             "professor_id": professor1.id,
         },
@@ -68,7 +68,7 @@ def seed_database(db: Session):
             "nome": "Engenharia de Software Avançada",
             "codigo": "ES002",
             "carga_horaria": 90,
-            "professor_id": professor1.id,
+            "professor_id": professor2.id,
         },
     ]
     
