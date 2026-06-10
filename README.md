@@ -4,7 +4,7 @@ Uma API REST robusta e bem documentada para gerenciar sistemas acadêmicos com s
 
 **Stack**: FastAPI + SQLite + Docker + Pytest  
 **Arquitetura**: Camadas (Domain, Services, Router, Database)  
-**Status**: ✅ Produção-Ready
+**Status**:  Produção-Ready
 
 ---
 
