@@ -411,43 +411,7 @@ def criar_aluno(db: Session, aluno: AlunoCreate) -> Aluno:
     pass
 ```
 
-Consulte [DESENVOLVIMENTO.md](DESENVOLVIMENTO.md) para convenções completas.
 
----
 
-## 📋 Requisitos Completados
 
-✅ Arquitetura em camadas (domain, services, router, database)  
-✅ Fluxograma em Mermaid (FLUXOGRAMA.md)  
-✅ Seed com dados gerados por IA (5 alunos, 3 professores, 4 disciplinas)  
-✅ Dockerfile e docker-compose  
-✅ Endpoints CRUD completos  
-✅ Endpoints de matrículas (criar, cancelar, consultar)  
-✅ Endpoints de notas (lançar, corrigir, consultar)  
-✅ Relatório de boletim  
-✅ Health check com status do banco  
-✅ Swagger em /docs  
-✅ SQLite como banco de dados  
-✅ Validação com Pydantic  
-✅ Erro handling com HTTP status codes  
-✅ Paginação em endpoints  
-✅ README completo  
 
----
-
-## 📞 Suporte
-
-Para dúvidas ou issues, consulte:
-- Documentação Swagger: http://localhost:8000/docs
-- Fluxograma: Ver arquivo FLUXOGRAMA.md
-- Exemplos: Ver seção "Exemplos de Uso" acima
-
----
-
-## 📜 Licença
-
-MIT
-
----
-
-**Desenvolvido com ❤️ para fins acadêmicos**
